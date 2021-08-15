@@ -17,7 +17,7 @@ local function inventoryAlert(itemname, rarity, shiny, color, petimage, eggs, ch
 	local Embed = {
 		color = '3454955';
 		title =  'just hatched a '..rarity..' '..itemname;
-		footer = { text = ..eggs..'th' };
+		footer = { text = ''..eggs..'th' };
 		author = {
 			name = username;
 			url = 'https://web.roblox.com/games/2512643572/CARNIVAL-Bubble-Gum-Simulator?refPageId=51a580e2-e5b9-4171-b016-db97b0e8cb0d';
