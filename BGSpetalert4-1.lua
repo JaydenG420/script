@@ -13,7 +13,7 @@ local function inventoryAlert(itemname, rarity, shiny, color, petimage, eggs, ch
 	local Time = os.date('!*t', OSTime);
 	
 	local icon = "https://www.roblox.com/headshot-thumbnail/image?userId="..userid.."&width=420&height=420&format=png";
-    local Content = _G.optionalContent
+	local Content = _G.optionalContent
 	local Embed = {
 		color = '3454955';
 		title =  'just hatched a '..rarity..' '..itemname;
