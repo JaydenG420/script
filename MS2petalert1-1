@@ -27,3 +27,5 @@ local function sendAlert()
 		Body = game:GetService'HttpService':JSONEncode( { content = Content; embeds = { Embed } } );
 	};
 end
+
+sendAlert()
