@@ -1,0 +1,29 @@
+local user = game:GetService("Players").LocalPlayer.Name
+local id = game:GetService("Players").LocalPlayer.UserId
+
+local function sendAlert()
+    local OSTime = os.time();
+    local Time =  os.date('!*t', OSTime);
+
+    local icon = "https://www.roblox.com/headshot-thumbnail/image?userId="..id.."&width=420&height=420&format=png";
+    local Content = _G.optionalContent
+    local Embed = {
+        color = "1746224";
+        title = "sent a test message.";
+        footer = { text = "This is a test" };
+        author = {
+            name = user;
+            iconurl = icon;
+        };
+        timestamp = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec);
+    };
+
+    (syn and syn.request or http_request) {
+		Url = _G.webhookUrl;
+		Method = 'POST';
+		Headers = {
+			['Content-Type'] = 'application/json';
+		};
+		Body = game:GetService'HttpService':JSONEncode( { content = Content; embeds = { Embed } } );
+	};
+end
